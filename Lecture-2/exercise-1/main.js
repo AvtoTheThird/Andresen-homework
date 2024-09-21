@@ -1,10 +1,10 @@
 Array.prototype.myFilter = function (callback, context = this) {
   if (typeof callback !== "function") {
-    throw new TypeError(callback + "is not a function");
+    throw new TypeError(`${callback} is not a function`);
   }
 
   if (!Array.isArray(this)) {
-    throw new TypeError(this + "is not an array");
+    throw new TypeError(`${this} is not an array`);
   }
 
   let filteredArray = [];
@@ -14,5 +14,6 @@ Array.prototype.myFilter = function (callback, context = this) {
       filteredArray.push(this[i]);
     }
   }
+
   return filteredArray;
 };
