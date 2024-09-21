@@ -10,7 +10,7 @@ Array.prototype.myFilter = function (callback, context = this) {
   let filteredArray = [];
 
   for (let i = 0; i < this.length; i++) {
-    if (callback.bind(context)(this[i])) {
+    if (callback.bind(context)(this[i], i, this)) {
       filteredArray.push(this[i]);
     }
   }
