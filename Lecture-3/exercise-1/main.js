@@ -10,14 +10,12 @@ const myIterable = {
     if (typeof this.from !== "number" || typeof this.to !== "number") {
       throw new TypeError("passed elements must be numbers");
     }
-    ans = [];
+
+    let ans = [];
+
     for (let i = this.from; i <= this.to; i++) {
       ans.push(i);
     }
     yield ans;
   },
 };
-
-for (let item of myIterable) {
-  console.log(item);
-}
