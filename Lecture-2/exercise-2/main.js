@@ -1,29 +1,28 @@
-const originalAlert = window.alert;
-const originalConfirm = window.confirm;
-const originalPrompt = window.prompt;
-
+const ORIGINAL_ALERT = window.alert;
+const ORIGINAL_CONFIRM = window.confirm;
+const ORIGINAL_PROMPT = window.prompt;
 let isCustomAlertRunning = false;
 
 window.alert = function (message) {
   if (isCustomAlertRunning) {
-    return originalAlert(message);
+    return ORIGINAL_ALERT(message);
   }
 
   isCustomAlertRunning = true;
 
-  originalConfirm();
-  originalPrompt();
-  originalAlert(message);
-  originalConfirm();
-  originalPrompt();
+  ORIGINAL_CONFIRM();
+  ORIGINAL_PROMPT();
+  ORIGINAL_ALERT(message);
+  ORIGINAL_CONFIRM();
+  ORIGINAL_PROMPT();
 
   isCustomAlertRunning = false;
 };
 
 window.confirm = function (message) {
-  return originalConfirm(message);
+  return ORIGINAL_CONFIRM(message);
 };
 
 window.prompt = function (message, defaultValue) {
-  return originalPrompt(message, defaultValue);
+  return ORIGINAL_PROMPT(message, defaultValue);
 };
