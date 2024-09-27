@@ -1,15 +1,29 @@
-const ORIGINAL_ALERT = window.alert;
+const originalAlert = window.alert;
+const originalConfirm = window.confirm;
+const originalPrompt = window.prompt;
 
-const ORIGINAL_CONFIRM = window.confirm;
-
-const ORIGINAL_PROPMPT = window.prompt;
+let isCustomAlertRunning = false;
 
 window.alert = function (message) {
-  ORIGINAL_CONFIRM();
-  ORIGINAL_PROPMPT();
-  ORIGINAL_ALERT(message);
-  ORIGINAL_CONFIRM();
-  ORIGINAL_PROPMPT();
+  if (isCustomAlertRunning) {
+    return originalAlert(message);
+  }
+
+  isCustomAlertRunning = true;
+
+  originalConfirm();
+  originalPrompt();
+  originalAlert(message);
+  originalConfirm();
+  originalPrompt();
+
+  isCustomAlertRunning = false;
 };
 
-window.alert("Hello");
+window.confirm = function (message) {
+  return originalConfirm(message);
+};
+
+window.prompt = function (message, defaultValue) {
+  return originalPrompt(message, defaultValue);
+};
