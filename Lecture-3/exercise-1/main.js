@@ -4,11 +4,11 @@ const myIterable = {
 
   *[Symbol.iterator]() {
     if (this.from > this.to) {
-      throw new Error("'from' cant be bigger than 'to'");
+      throw new Error('"from" cant be bigger than "to"');
     }
 
-    if (typeof this.from !== "number" || typeof this.to !== "number") {
-      throw new TypeError("passed elements must be numbers");
+    if (typeof this.from !== 'number' || typeof this.to !== 'number') {
+      throw new TypeError('passed elements must be numbers');
     }
 
     let ans = [];
