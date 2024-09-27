@@ -1,6 +1,7 @@
 const ORIGINAL_ALERT = window.alert;
 const ORIGINAL_CONFIRM = window.confirm;
 const ORIGINAL_PROMPT = window.prompt;
+
 let isCustomAlertRunning = false;
 
 window.alert = function (message) {
