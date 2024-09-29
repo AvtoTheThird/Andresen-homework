@@ -7,8 +7,8 @@ class Calculator {
   }
 
   validateNumber(value) {
-    if (typeof value !== "number" || !Number.isFinite(value)) {
-      throw new Error("Invalid number");
+    if (typeof value !== 'number' || !Number.isFinite(value)) {
+      throw new Error('Invalid number');
     }
   }
 
