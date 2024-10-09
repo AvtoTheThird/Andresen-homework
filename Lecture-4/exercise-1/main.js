@@ -39,5 +39,6 @@ class Calculator {
       throw new Error("Division by zero");
     }
     return this.x / this.y;
+    
   };
 }
