@@ -57,7 +57,7 @@ class LinkedList {
 
   removeFirst(){
     if (this.head === null) {
-      return;
+      throw new Error('linked list is empty')
     }
 
     this.head = this.head.next;
@@ -65,7 +65,7 @@ class LinkedList {
 
   removeLast(){
     if (this.head === null) {
-      return;
+      throw new Error('linked list is empty')
     }
 
     if (this.head.next === null) {
