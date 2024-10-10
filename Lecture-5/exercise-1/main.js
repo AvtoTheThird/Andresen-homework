@@ -15,15 +15,13 @@ class LinkedList {
 
     if (!this.head) {
       this.head = newNode;
-    } 
-    
-    else {
-      let currentHead = this.head;
+    } else {
+      let currentNode = this.head;
 
       while (currentHead.next !== null) {
         currentHead = currentHead.next;
       }
-      currentHead.next = newNode;
+      currentNode.next = newNode;
     }
   }
 
@@ -55,17 +53,17 @@ class LinkedList {
     }
   }
 
-  removeFirst(){
+  removeFirst() {
     if (this.head === null) {
-      throw new Error('linked list is empty')
+      throw new Error("linked list is empty");
     }
 
     this.head = this.head.next;
   }
 
-  removeLast(){
+  removeLast() {
     if (this.head === null) {
-      throw new Error('linked list is empty')
+      throw new Error("linked list is empty");
     }
 
     if (this.head.next === null) {
@@ -80,11 +78,10 @@ class LinkedList {
     }
 
     current.next = null;
-    
   }
-  
-  clear(){
-    this.head=null
+
+  clear() {
+    this.head = null;
   }
 
   search(data) {
@@ -119,5 +116,4 @@ class LinkedList {
 
     return elements;
   }
-
 }
