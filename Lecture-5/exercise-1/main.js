@@ -10,7 +10,7 @@ class LinkedList {
     this.head = null;
   }
 
-  addFirst(data) {
+  addLast(data) {
     let newNode = new Node(data);
 
     if (!this.head) {
@@ -24,8 +24,7 @@ class LinkedList {
       currentNode.next = newNode;
     }
   }
-
-  addLast(data) {
+  addFirst(data) {
     let newNode = new Node(data);
 
     newNode.next = this.head;
