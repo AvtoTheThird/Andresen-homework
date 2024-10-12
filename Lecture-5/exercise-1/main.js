@@ -18,8 +18,8 @@ class LinkedList {
     } else {
       let currentNode = this.head;
 
-      while (currentHead.next !== null) {
-        currentHead = currentHead.next;
+      while (currentNode.next !== null) {
+        currentNode = currentNode.next;
       }
       currentNode.next = newNode;
     }
@@ -39,6 +39,7 @@ class LinkedList {
 
     if (this.head.data === data) {
       this.head = this.head.next;
+      return;
     }
 
     let current = this.head;
@@ -93,7 +94,7 @@ class LinkedList {
 
     let current = this.head;
 
-    while (current.next !== null) {
+    while (current !== null) {
       if (current.data === data) {
         return true;
       }

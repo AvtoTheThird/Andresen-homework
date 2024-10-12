@@ -14,16 +14,14 @@ class Stack {
 
   push(data) {
     if (this.size === this.maxSize) {
-      throw new Error('stack is full');
+      throw new Error("stack is full");
     }
 
     const newNode = new Node(data);
 
     if (!this.top) {
       this.top = newNode;
-    }
-    
-    else {
+    } else {
       newNode.next = this.top;
       this.top = newNode;
     }
@@ -32,7 +30,7 @@ class Stack {
 
   pop() {
     if (this.top === null) {
-      throw new Error('stack is empty');
+      throw new Error("stack is empty");
     }
     this.top = this.top.next;
     this.size--;
@@ -47,7 +45,7 @@ class Stack {
   }
 
   isEmpty() {
-    return Boolean(this.size);
+    return this.size === 0;
   }
 
   toArray() {
@@ -64,8 +62,8 @@ class Stack {
   }
 
   static fromIterable(iterable) {
-    if (typeof iterable[Symbol.iterator] !== 'function') {
-      throw new Error('passed entity is not iterable');
+    if (typeof iterable[Symbol.iterator] !== "function") {
+      throw new Error("passed entity is not iterable");
     }
 
     let stack = new Stack(iterable.length);
