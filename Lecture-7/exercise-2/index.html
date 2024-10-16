@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./StopWatchLogic.js"></script>
+    <script src="./TimerLogic.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background-color: grey;
+        display: flex;
+        justify-content: space-between;
+        /* flex: 1 1 0px; */
+        height: 100vh;
+      }
+      /* STOPWATCH STYLES */
+      .stopwatch {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+        width: 100%;
+        border-right: 1px solid black;
+      }
+
+      .time {
+        font-size: 75px;
+        font-weight: bold;
+        background-color: rgb(92, 114, 114);
+        padding: 20px;
+        border-radius: 100%;
+        min-width: 80px;
+        text-align: center;
+      }
+      /* TIMER STYLES */
+      .timer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stopwatch" class="stopwatch">
+      <p id="time" class="time">0:0</p>
+      <div>
+        <button id="stopwatch_start_stop_button">start</button>
+        <button id="stopwatch_reset_button">reset</button>
+      </div>
+    </div>
+
+    <div id="timer" class="timer">
+      <p id="timer_time" class="time">0:0</p>
+      <input
+        type="number"
+        name=""
+        id="time_input"
+        placeholder="enter time in seconds"
+      />
+
+      <div style="display: flex">
+        <button id="30s_button">+30s</button>
+        <button id="1min_button">+1min</button>
+        <button id="5min_button">+5min</button>
+      </div>
+      <div>
+        <button id="timer_start_stop_button">start</button>
+        <button id="timer_reset_button">reset</button>
+      </div>
+    </div>
+  </body>
+</html>
