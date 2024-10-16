@@ -12,8 +12,8 @@ TIME_DISPLAYdocument.addEventListener('DOMContentLoaded', () => {
   let intervalId;
 
   function secoundsToTime(secounds) {
-    const minutes = Math.floor(secounds / 60);
-    const seconds = secounds % 60;
+    let minutes = Math.floor(secounds / 60);
+    let seconds = secounds % 60;
 
     return `${minutes}:${seconds}`;
   }
